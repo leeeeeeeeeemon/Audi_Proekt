@@ -1,0 +1,33 @@
+﻿<Window x:Class="RDS_GP_App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RDS_GP_App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1080" Width="1920">
+    <Grid Background="#708090" >
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition  />
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2F4F4F" Margin="0,0,0,63">
+        
+
+        </StackPanel>
+        <Grid Margin="36,28,56,84" RenderTransformOrigin="0.211,0.937">
+            <Grid.Background>
+                <ImageBrush ImageSource="audi-logo-png-732.png"/>
+            </Grid.Background>
+        </Grid>
+        <StackPanel Grid.Column="1" Background="#708090" RenderTransformOrigin="0.542,0.011" Margin="0,111,0,0" Grid.RowSpan="2">
+            <Frame x:Name="authorPage" NavigationUIVisibility="Hidden"/>
+        </StackPanel>
+    </Grid>
+</Window>

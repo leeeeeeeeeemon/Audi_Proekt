@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="66e445af9e3146f3b43c785a110d4d32" Name="Diagram1" ZoomLevel="55">
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.Auto" Width="1.5" PointX="3.75" PointY="8.625" />
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.Discounts" Width="1.5" PointX="3.75" PointY="1.125" />
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.Employee" Width="1.5" PointX="3" PointY="4.25" />
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.Position" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.Sale_Auto" Width="1.5" PointX="6" PointY="4.25" />
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.125" />
+        <EntityTypeShape EntityType="AUDI_BaryshevModel.users" Width="1.5" PointX="0.75" PointY="4.125" />
+        <AssociationConnector Association="AUDI_BaryshevModel.FK_Sale_Auto_Auto" />
+        <AssociationConnector Association="AUDI_BaryshevModel.FK_Sale_Auto_Discounts" />
+        <AssociationConnector Association="AUDI_BaryshevModel.FK_Employee_Position" />
+        <AssociationConnector Association="AUDI_BaryshevModel.FK_Employee_users" />
+        <AssociationConnector Association="AUDI_BaryshevModel.FK_Sale_Auto_users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
