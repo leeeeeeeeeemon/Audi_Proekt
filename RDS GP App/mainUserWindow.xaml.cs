@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RDS_GP_App
+namespace Audi
 {
     /// <summary>
     /// Логика взаимодействия для mainUserWindow.xaml

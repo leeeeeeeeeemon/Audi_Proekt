@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RDS_GP_App
+namespace Audi
 {
     using System;
     using System.Collections.Generic;

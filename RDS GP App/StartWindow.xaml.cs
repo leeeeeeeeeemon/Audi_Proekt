@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace RDS_GP_App.Windows
+namespace Audi.Windows
 {
     /// <summary>
     /// Interaction logic for StartWindow.xaml

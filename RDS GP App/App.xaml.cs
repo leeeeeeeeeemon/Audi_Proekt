@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RDS_GP_App
+namespace Audi
 {
     /// <summary>
     /// Interaction logic for App.xaml

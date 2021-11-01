@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RDS_GP_App
+namespace Audi
 {
     /// <summary>
     /// Interaction logic for authorPage.xaml
