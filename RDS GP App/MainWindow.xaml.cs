@@ -23,7 +23,7 @@ namespace Audi
         public MainWindow()
         {
             InitializeComponent();
-            authorPage.NavigationService.Navigate(new authorPage());
+            authorPage.NavigationService.Navigate(new authorPage(ref userNameLabel, ref userBalance));
         }
     }
     

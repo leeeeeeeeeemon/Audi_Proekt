@@ -19,7 +19,7 @@ namespace Audi
         public string surname { get; set; }
         public Nullable<int> id_position { get; set; }
         public string adress { get; set; }
-        public Nullable<int> number { get; set; }
+        public string number { get; set; }
         public int id_user { get; set; }
     
         public virtual Position Position { get; set; }

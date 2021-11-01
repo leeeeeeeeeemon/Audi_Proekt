@@ -24,18 +24,32 @@ namespace Audi
     public partial class authorPage : Page
     {
         public static ObservableCollection<users> userss { get; set; }
+        Label userNameLabel;
+        Label userBalanceLabel;
+        public authorPage( ref Label mainWindowLabel, ref Label userBalance)
+        {
+            InitializeComponent();
+            userNameLabel = mainWindowLabel;
+            userBalanceLabel = userBalance;
+        }
         public authorPage()
         {
             InitializeComponent();
+            
         }
-        
+
         private void autho_event(object sender, RoutedEventArgs e)
         {
             userss = new ObservableCollection<users>(bd_connections.connection.users.ToList());
             var z = userss.Where(a => a.login == txt_login.Text && a.password == txt_pass.Password).FirstOrDefault();
             if (z != null)
             {
-                MessageBox.Show(z.name);
+                string userName = z.name;
+                MessageBox.Show(userName);
+                userNameLabel.Content = "Welcome, " + userName;
+                userNameLabel.Visibility = Visibility;
+                userBalanceLabel.Content = "Balance: " + Convert.ToString(z.balance);
+
             }
             else
             {

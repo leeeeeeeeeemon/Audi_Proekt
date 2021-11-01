@@ -17,8 +17,13 @@
             <RowDefinition Height="4*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2F4F4F" Margin="0,0,0,63">
-        
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2F4F4F" Margin="0,0,-0.333,64" Orientation="Horizontal">
+
+
+            <Label x:Name="userNameLabel" Content="Label" Margin="700,9,548,9" FontSize="56" IsEnabled="False" Height="93" HorizontalAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold" Foreground="#451312" Width="477" />
+            <Label x:Name="userBalance" Content="Balance:" FontSize="56" RenderTransformOrigin="-5.179,0.595" Height="116" Margin="-400,0,0,-5" Width="596" />
+
+
 
         </StackPanel>
         <Grid Margin="36,28,56,84" RenderTransformOrigin="0.211,0.937">
@@ -26,7 +31,7 @@
                 <ImageBrush ImageSource="audi-logo-png-732.png"/>
             </Grid.Background>
         </Grid>
-        <StackPanel Grid.Column="1" Background="#708090" RenderTransformOrigin="0.542,0.011" Margin="0,111,0,0" Grid.RowSpan="2">
+        <StackPanel Background="#708090" RenderTransformOrigin="0.542,0.011" Margin="133,111,142,77" Grid.RowSpan="3" Grid.ColumnSpan="3">
             <Frame x:Name="authorPage" NavigationUIVisibility="Hidden"/>
         </StackPanel>
     </Grid>

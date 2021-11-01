@@ -10,6 +10,7 @@
             <PropertyRef Name="id_auto" />
           </Key>
           <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="model" Type="varchar" MaxLength="10" />
           <Property Name="name" Type="nchar" MaxLength="20" />
           <Property Name="category" Type="nchar" MaxLength="20" />
           <Property Name="engine_power" Type="int" />
@@ -34,7 +35,7 @@
           <Property Name="surname" Type="varchar" MaxLength="50" />
           <Property Name="id_position" Type="int" />
           <Property Name="adress" Type="varchar" MaxLength="50" />
-          <Property Name="number" Type="int" />
+          <Property Name="number" Type="varchar" MaxLength="12" />
           <Property Name="id_user" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Position">
@@ -49,7 +50,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="id_user" Type="int" Nullable="false" />
           <Property Name="id_auto" Type="int" Nullable="false" />
           <Property Name="id_discounts" Type="int" />
@@ -213,6 +214,7 @@
           <Property Name="characteristic" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
           <NavigationProperty Name="Sale_Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Auto" FromRole="Auto" ToRole="Sale_Auto" />
+          <Property Name="model" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Discounts">
           <Key>
@@ -232,7 +234,7 @@
           <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_position" Type="Int32" />
           <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="number" Type="Int32" />
+          <Property Name="number" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
           <Property Name="id_user" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Position" Relationship="AUDI_BaryshevModel.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
           <NavigationProperty Name="users" Relationship="AUDI_BaryshevModel.FK_Employee_users" FromRole="Employee" ToRole="users" />
@@ -281,7 +283,7 @@
           <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="balance" Type="Decimal" />
           <NavigationProperty Name="Employee" Relationship="AUDI_BaryshevModel.FK_Employee_users" FromRole="users" ToRole="Employee" />
           <NavigationProperty Name="Sale_Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_users" FromRole="users" ToRole="Sale_Auto" />
         </EntityType>
@@ -354,6 +356,7 @@
           <EntitySetMapping Name="Auto">
             <EntityTypeMapping TypeName="AUDI_BaryshevModel.Auto">
               <MappingFragment StoreEntitySet="Auto">
+                <ScalarProperty Name="model" ColumnName="model" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="characteristic" ColumnName="characteristic" />
                 <ScalarProperty Name="acceleration_from_0_to_100_sec____" ColumnName="acceleration_from_0 to_100(sec)]]]" />

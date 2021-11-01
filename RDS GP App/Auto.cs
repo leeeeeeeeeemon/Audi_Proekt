@@ -27,6 +27,7 @@ namespace Audi
         public string acceleration_from_0_to_100_sec____ { get; set; }
         public string characteristic { get; set; }
         public Nullable<decimal> price { get; set; }
+        public string model { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale_Auto> Sale_Auto { get; set; }
