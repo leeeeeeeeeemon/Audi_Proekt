@@ -68,6 +68,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="bd_connections.cs" />
+    <Compile Include="CarBuyWindow.xaml.cs">
+      <DependentUpon>CarBuyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Discounts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -111,6 +114,10 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Page Include="authorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CarBuyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

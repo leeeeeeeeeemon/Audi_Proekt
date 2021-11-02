@@ -32,10 +32,21 @@ namespace Audi
         {
             var query =
             from Auto in bd_connections.connection.Auto
-            orderby Auto.price
-            select new { Auto.name  , Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.characteristic, Auto.price };
+            select new { Auto.name  , Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
 
             Auto.ItemsSource = query.ToList();
+        }
+
+        private void ShowCars_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("чЕ САМЫЙ КРУТОЙ?");
+            CarBuyWindow diag = new CarBuyWindow();
+            diag.ShowDialog();
         }
     }
 }

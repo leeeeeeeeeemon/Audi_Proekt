@@ -15,8 +15,8 @@
           <Property Name="category" Type="nchar" MaxLength="20" />
           <Property Name="engine_power" Type="int" />
           <Property Name="acceleration_from_0 to_100(sec)]]]" Type="nchar" MaxLength="10" />
-          <Property Name="characteristic" Type="nchar" MaxLength="1000" />
           <Property Name="price" Type="money" />
+          <Property Name="characteristic" Type="nchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="Discounts">
           <Key>

@@ -29,13 +29,20 @@ namespace Audi
 
         private void ClickRegistration(object sender, RoutedEventArgs e)
         {
-            var u = new users();
-            u.name = txt_name.Text;
-            u.login = txt_login.Text;
-            u.password = txt_password.Password;
-            bd_connections.connection.users.Add(u);
-            bd_connections.connection.SaveChanges();
-            MessageBox.Show("Пользователь " + u.name + " создан, можете авторизоваться");
+            if(txt_name!= null && txt_login!= null && txt_password!= null)
+            { 
+                var u = new users();
+                u.name = txt_name.Text;
+                u.login = txt_login.Text;
+                u.password = txt_password.Password;
+                bd_connections.connection.users.Add(u);
+                bd_connections.connection.SaveChanges();
+                MessageBox.Show("Пользователь " + u.name + " создан, можете авторизоваться");
+            }
+            else
+            {
+                MessageBox.Show("Заполните данные");
+            }
 
         }
         

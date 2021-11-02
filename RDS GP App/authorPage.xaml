@@ -26,8 +26,8 @@
         <PasswordBox x:Name="txt_pass" Grid.Row="2" Grid.Column="1" Margin="0,36" HorizontalAlignment="Left" Width="200" FontSize="25"/>
 
         <StackPanel Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btn_Confirm_authorisation" Content="Confirm" Height="60" Width="220" FontSize="36" Foreground="White" Background="#2A2243" Margin="8" Click="autho_event"/>
-            <Button x:Name="btn_Registration" Content="Registration" Height="60" Width="220" FontSize="36" Foreground="White" Background="#2A2243" Margin="8" Click="btn_Registration_Click"/>
+            <Button x:Name="btn_Confirm_authorisation" Content="Confirm" Height="60" Width="220" FontSize="36" Foreground="White" Background="#2F4F4F" Margin="8" Click="autho_event"/>
+            <Button x:Name="btn_Registration" Content="Registration" Height="60" Width="220" FontSize="36" Foreground="White" Background="#2F4F4F" Margin="8" Click="btn_Registration_Click"/>
         </StackPanel>
 
 

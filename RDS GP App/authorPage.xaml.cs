@@ -46,10 +46,9 @@ namespace Audi
             {
                 string userName = z.name;
                 
-                userNameLabel.Content = "Welcome, " + userName;
+                userNameLabel.Content = userName;
                 userNameLabel.Visibility = Visibility;
                 userBalanceLabel.Content = "Balance: " + Convert.ToString(z.balance);
-                MessageBox.Show("hui");
                 NavigationService.Navigate(new UserMainMenu());
 
 

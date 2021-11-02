@@ -21,6 +21,30 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid Name="Auto" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"  />
+        <DataGrid Name="Auto"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding}" Background="DarkSlateGray"  MouseDoubleClick="DataGridRow_MouseDoubleClick" HorizontalGridLinesBrush="DimGray" IsReadOnly="True" VerticalGridLinesBrush="DimGray">
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=name }" />
+                <DataGridTextColumn Header="Категория" Width="*" Binding="{Binding Path=category }" />
+                <DataGridTextColumn Header="Мощность" Width="*" Binding="{Binding Path=engine_power }" />
+                <DataGridTextColumn Header="Разгон до 100" Width="*" Binding="{Binding Path=acceleration_from_0_to_100_sec____ }" />
+                <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=price }" />
+                
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition/>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Button x:Name="ShowCars" Content="Показать машины"  FontSize="12" Foreground="White" Background="#2F4F4F" Margin="8" Click="ShowCars_Click" />
+        </Grid>
     </Grid>
 </Page>
