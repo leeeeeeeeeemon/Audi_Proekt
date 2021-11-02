@@ -48,5 +48,16 @@ namespace Audi
             CarBuyWindow diag = new CarBuyWindow();
             diag.ShowDialog();
         }
+
+        private void modelComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedText = modelComboBox.Text.ToString();
+            var query =
+           from Auto in bd_connections.connection.Auto
+           where Auto.model == selectedText
+           select new { Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
+
+            Auto.ItemsSource = query.ToList();
+        }
     }
 }
