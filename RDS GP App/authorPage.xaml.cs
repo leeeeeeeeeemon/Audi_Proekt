@@ -45,10 +45,13 @@ namespace Audi
             if (z != null)
             {
                 string userName = z.name;
-                MessageBox.Show(userName);
+                
                 userNameLabel.Content = "Welcome, " + userName;
                 userNameLabel.Visibility = Visibility;
                 userBalanceLabel.Content = "Balance: " + Convert.ToString(z.balance);
+                MessageBox.Show("hui");
+                NavigationService.Navigate(new UserMainMenu());
+
 
             }
             else

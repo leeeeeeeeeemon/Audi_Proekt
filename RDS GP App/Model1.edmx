@@ -78,7 +78,7 @@
           <Property Name="login" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="image" Type="varchar" MaxLength="50" />
-          <Property Name="balance" Type="money" />
+          <Property Name="balance" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <Association Name="FK_Employee_Position">
           <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
@@ -283,7 +283,7 @@
           <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="balance" Type="Decimal" />
+          <Property Name="balance" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Employee" Relationship="AUDI_BaryshevModel.FK_Employee_users" FromRole="users" ToRole="Employee" />
           <NavigationProperty Name="Sale_Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_users" FromRole="users" ToRole="Sale_Auto" />
         </EntityType>

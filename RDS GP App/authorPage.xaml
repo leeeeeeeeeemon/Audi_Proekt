@@ -22,8 +22,8 @@
         <TextBlock Text="Authorization" TextAlignment="Center" VerticalAlignment="Center" FontSize="36" Grid.ColumnSpan="2" FontFamily="Times New Roman" FontWeight="Bold"/>
         <TextBlock Text="Login" TextAlignment="Center" VerticalAlignment="center" FontSize="36" Grid.Column="0" Grid.Row="1" FontFamily="Times New Roman" FontWeight="Bold" HorizontalAlignment="Right" RenderTransformOrigin="0.217,0.624" Margin="0,36,22,36" Width="90"/>
         <TextBlock Text="Password" TextAlignment="Center" VerticalAlignment="Center" FontSize="36" Grid.Column="0" Grid.Row="2" FontFamily="Times New Roman" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,36,22,36" Width="148"/>
-        <TextBox x:Name="txt_login" Grid.Row="1" Grid.Column="1" Margin="0,36" HorizontalAlignment="Left" Width="200" />
-        <PasswordBox x:Name="txt_pass" Grid.Row="2" Grid.Column="1" Margin="0,36" HorizontalAlignment="Left" Width="200"/>
+        <TextBox x:Name="txt_login" Grid.Row="1" Grid.Column="1" Margin="0,36" HorizontalAlignment="Left" Width="200" FontSize="25"/>
+        <PasswordBox x:Name="txt_pass" Grid.Row="2" Grid.Column="1" Margin="0,36" HorizontalAlignment="Left" Width="200" FontSize="25"/>
 
         <StackPanel Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btn_Confirm_authorisation" Content="Confirm" Height="60" Width="220" FontSize="36" Foreground="White" Background="#2A2243" Margin="8" Click="autho_event"/>
