@@ -29,9 +29,11 @@ namespace Audi
         public decimal userBalance;
         public int user_id;
         public int cur_id;
-        public CarBuyWindow(string autoInfo, decimal userBalance, int userId)
+        public Audi.users userBuyCar;
+        public CarBuyWindow(string autoInfo, decimal userBalance, int userId, Audi.users user)
         {
             InitializeComponent();
+            userBuyCar = user;
 
             user_id = userId;
             
@@ -63,18 +65,31 @@ namespace Audi
 
         private void buyCarBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (true)
+                if(userBuyCar.balance >= price)
             {
+
+            
                 var u = new Sale_Auto();
                 u.id_user = user_id;
                 u.id_auto = cur_id;
                 u.passport = passportDanniTextBox.Text;
                 u.tlephon_number = Convert.ToString(numberTextBox.Text);
+
                 
+                userBuyCar.balance = userBuyCar.balance - price;
+
+
                 bd_connections.connection.Sale_Auto.Add(u);
                 bd_connections.connection.SaveChanges();
                 MessageBox.Show("Поздравляем с успешной покупкой");
+                this.DialogResult = true;
             }
+            else
+            {
+                MessageBox.Show("Недостаточный баланс");
+            }
+
+
         }
     }
 }

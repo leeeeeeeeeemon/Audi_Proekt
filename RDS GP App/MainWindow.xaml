@@ -20,16 +20,14 @@
         <StackPanel Background="#708090" RenderTransformOrigin="0.542,0.011" Margin="10,10,0,0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Frame x:Name="authorPage" NavigationUIVisibility="Hidden"/>
         </StackPanel>
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2F4F4F" Margin="0,0,-0.333,64" Orientation="Horizontal">
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="3" Background="#2F4F4F" Margin="0,0,-0.4,10.2" Orientation="Horizontal">
             <Label x:Name="userNameLabel" Content="Label" Margin="700,9,548,9" FontSize="56" IsEnabled="False" Height="93" HorizontalAlignment="Center" FontFamily="Times New Roman" FontWeight="Bold" Foreground="#451312" Width="477" Visibility="Hidden" />
-
-
-            <Label x:Name="userBalance" Content="Balance:" FontSize="56" RenderTransformOrigin="-5.179,0.595" Margin="-400,10,0,-5" Width="572" HorizontalAlignment="Left" />
+            <Label x:Name="userBalance" Content="Balance:" FontSize="56" RenderTransformOrigin="-5.179,0.595" Margin="-850,10,0,-5.2" Width="737" HorizontalAlignment="Left" />
 
 
 
         </StackPanel>
-        <Grid Margin="36,28,56,84" RenderTransformOrigin="0.211,0.937">
+        <Grid Margin="36,28,10.2,54.2" RenderTransformOrigin="0.211,0.937">
             <Grid.Background>
                 <ImageBrush ImageSource="img\audi-logo-png-732.png"/>
 

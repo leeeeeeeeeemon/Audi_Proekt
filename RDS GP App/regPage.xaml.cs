@@ -22,9 +22,13 @@ namespace Audi
     /// </summary>
     public partial class regPage : Page
     {
-        public regPage()
+        public Label name;
+        public Label balance;
+        public regPage(ref Label userNameLabel, ref Label userBalance)
         {
             InitializeComponent();
+            balance = userBalance;
+            name = userNameLabel;
         }
 
         private void ClickRegistration(object sender, RoutedEventArgs e)
@@ -37,6 +41,7 @@ namespace Audi
                 u.password = txt_password.Password;
                 bd_connections.connection.users.Add(u);
                 bd_connections.connection.SaveChanges();
+                
                 MessageBox.Show("Пользователь " + u.name + " создан, можете авторизоваться");
             }
             else
@@ -48,7 +53,7 @@ namespace Audi
         
         private void ClickToAuthorisation(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new authorPage());
+            NavigationService.Navigate(new authorPage(ref name, ref balance));
         }
     }
 

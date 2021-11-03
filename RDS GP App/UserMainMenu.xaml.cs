@@ -32,12 +32,15 @@ namespace Audi
         {
             public string name { get; set; }
         }
+        public Label userBalanceLab;
 
         public static ObservableCollection<Auto> auto { get; set; }
         public Audi.users userLogin;
         public UserMainMenu(ref Label userName, ref Label userBalance, Audi.users user)
         {
             InitializeComponent();
+
+            userBalanceLab = userBalance;
             userLogin = user;
             userName.Content = user.name;
             userName.Visibility = Visibility;
@@ -82,6 +85,10 @@ namespace Audi
 
         private void ShowCars_Click(object sender, RoutedEventArgs e)
         {
+            if(userLogin.login == "lime"){
+                addNewCar.Visibility = Visibility.Visible;
+            }
+            
             ModelSeletcLabel.Visibility = Visibility.Visible;
             ModelSeletcLabel_Copy.Visibility = Visibility.Visible;
             myBuy.Visibility = Visibility.Hidden;
@@ -92,10 +99,17 @@ namespace Audi
 
         private void DataGridRow_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("чЕ САМЫЙ КРУТОЙ?");
+           // MessageBox.Show("чЕ САМЫЙ КРУТОЙ?");
             string autoInfo = Auto.SelectedItem.ToString();
-            CarBuyWindow diag = new CarBuyWindow(autoInfo, Convert.ToDecimal(userLogin.balance), Convert.ToInt32(userLogin.id_user));
-            diag.ShowDialog();
+            CarBuyWindow diag = new CarBuyWindow(autoInfo, Convert.ToDecimal(userLogin.balance), Convert.ToInt32(userLogin.id_user), userLogin);
+            bool dialogResult = Convert.ToBoolean(diag.ShowDialog());
+            if (dialogResult)
+            {
+
+            userBalanceLab.Content = "Balance: " + Convert.ToString(userLogin.balance);
+            }
+
+
         }
 
         private void modelComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -112,7 +126,7 @@ namespace Audi
             var query =
             from Auto in bd_connections.connection.Auto
             where Auto.model == ComboItem.Name
-            select new { Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
+            select new { Auto.id_auto, Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
 
             Auto.ItemsSource = query.ToList();
             }
@@ -121,7 +135,7 @@ namespace Audi
             var query =
             from Auto in bd_connections.connection.Auto
            
-            select new { Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
+            select new { Auto.id_auto, Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
             Auto.ItemsSource = query.ToList();
             }
                 
@@ -143,7 +157,7 @@ namespace Audi
                 var query =
                 from Auto in bd_connections.connection.Auto
                 where Auto.category == ComboItem.name
-                select new { Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
+                select new { Auto.id_auto, Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
 
                 Auto.ItemsSource = query.ToList();
             }
@@ -152,19 +166,57 @@ namespace Audi
                 var query =
                 from Auto in bd_connections.connection.Auto
 
-                select new { Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
+                select new { Auto.id_auto, Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
                 Auto.ItemsSource = query.ToList();
             }
         }
 
         private void ShowBuyCars_Click(object sender, RoutedEventArgs e)
         {
+            addNewCar.Visibility = Visibility.Hidden;
             ModelSeletcLabel.Visibility = Visibility.Hidden;
             ModelSeletcLabel_Copy.Visibility = Visibility.Hidden;
             myBuy.Visibility = Visibility.Visible;
             Auto.Visibility = Visibility.Hidden;
             modelComboBox.Visibility = Visibility.Hidden;
             kuzovComboBox.Visibility = Visibility.Hidden;
+        }
+
+        private void RefreshBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var query =
+            from Auto in bd_connections.connection.Auto
+            select new { Auto.id_auto, Auto.name, Auto.category, Auto.engine_power, Auto.acceleration_from_0_to_100_sec____, Auto.price, Auto.characteristic };
+
+            Auto.ItemsSource = query.ToList();
+
+            var query2 =
+            from Sale_Auto in bd_connections.connection.Sale_Auto
+            where Sale_Auto.id_user == userLogin.id_user
+            select new { Sale_Auto.id_auto, Sale_Auto.passport, Sale_Auto.tlephon_number };
+
+            myBuy.ItemsSource = query2.ToList();
+        }
+
+        private void addBalance_Click(object sender, RoutedEventArgs e)
+        {
+            addBalance dilal = new addBalance(userLogin);
+            bool result = Convert.ToBoolean(dilal.ShowDialog());
+            if (result)
+            {
+                userBalanceLab.Content = "Balance: " + Convert.ToString(userLogin.balance);
+            }
+        }
+
+        private void exitBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void addNewCar_Click(object sender, RoutedEventArgs e)
+        {
+            AddCarWin dial = new AddCarWin();
+            bool result = Convert.ToBoolean(dial.ShowDialog());
         }
     }
 }

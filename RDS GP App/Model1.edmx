@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище AUDI_BaryshevModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище AudiDodelat_33__33__33__33__33__33__33Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Auto">
           <Key>
             <PropertyRef Name="id_auto" />
           </Key>
-          <Property Name="id_auto" Type="int" Nullable="false" />
+          <Property Name="id_auto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="model" Type="varchar" MaxLength="10" />
           <Property Name="name" Type="nchar" MaxLength="20" />
           <Property Name="category" Type="nchar" MaxLength="20" />
@@ -56,16 +56,6 @@
           <Property Name="id_discounts" Type="int" />
           <Property Name="passport" Type="nchar" MaxLength="20" />
           <Property Name="tlephon_number" Type="nchar" MaxLength="20" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="users">
           <Key>
@@ -140,13 +130,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище AUDI_BaryshevModelContainer">
+        <EntityContainer Name="Хранилище AudiDodelat_33__33__33__33__33__33__33ModelContainer">
           <EntitySet Name="Auto" EntityType="Self.Auto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Discounts" EntityType="Self.Discounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sale_Auto" EntityType="Self.Sale_Auto" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
             <End Role="Position" EntitySet="Position" />
@@ -172,49 +161,20 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="AUDI_BaryshevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityContainer Name="AUDI_BaryshevEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Auto" EntityType="AUDI_BaryshevModel.Auto" />
-          <EntitySet Name="Discounts" EntityType="AUDI_BaryshevModel.Discounts" />
-          <EntitySet Name="Employee" EntityType="AUDI_BaryshevModel.Employee" />
-          <EntitySet Name="Position" EntityType="AUDI_BaryshevModel.Position" />
-          <EntitySet Name="Sale_Auto" EntityType="AUDI_BaryshevModel.Sale_Auto" />
-          <EntitySet Name="sysdiagrams" EntityType="AUDI_BaryshevModel.sysdiagrams" />
-          <EntitySet Name="users" EntityType="AUDI_BaryshevModel.users" />
-          <AssociationSet Name="FK_Sale_Auto_Auto" Association="AUDI_BaryshevModel.FK_Sale_Auto_Auto">
-            <End Role="Auto" EntitySet="Auto" />
-            <End Role="Sale_Auto" EntitySet="Sale_Auto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sale_Auto_Discounts" Association="AUDI_BaryshevModel.FK_Sale_Auto_Discounts">
-            <End Role="Discounts" EntitySet="Discounts" />
-            <End Role="Sale_Auto" EntitySet="Sale_Auto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Employee_Position" Association="AUDI_BaryshevModel.FK_Employee_Position">
-            <End Role="Position" EntitySet="Position" />
-            <End Role="Employee" EntitySet="Employee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Employee_users" Association="AUDI_BaryshevModel.FK_Employee_users">
-            <End Role="users" EntitySet="users" />
-            <End Role="Employee" EntitySet="Employee" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Sale_Auto_users" Association="AUDI_BaryshevModel.FK_Sale_Auto_users">
-            <End Role="users" EntitySet="users" />
-            <End Role="Sale_Auto" EntitySet="Sale_Auto" />
-          </AssociationSet>
-        </EntityContainer>
+      <Schema Namespace="AudiDodelat_33__33__33__33__33__33__33Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Auto">
           <Key>
             <PropertyRef Name="id_auto" />
           </Key>
           <Property Name="id_auto" Type="Int32" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="name" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="category" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="engine_power" Type="Int32" />
           <Property Name="acceleration_from_0_to_100_sec____" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="characteristic" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
           <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Sale_Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Auto" FromRole="Auto" ToRole="Sale_Auto" />
-          <Property Name="model" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="characteristic" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Sale_Auto" Relationship="Self.FK_Sale_Auto_Auto" FromRole="Auto" ToRole="Sale_Auto" />
         </EntityType>
         <EntityType Name="Discounts">
           <Key>
@@ -223,21 +183,21 @@
           <Property Name="id_discount" Type="Int32" Nullable="false" />
           <Property Name="type" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <Property Name="value___" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Sale_Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Discounts" FromRole="Discounts" ToRole="Sale_Auto" />
+          <NavigationProperty Name="Sale_Auto" Relationship="Self.FK_Sale_Auto_Discounts" FromRole="Discounts" ToRole="Sale_Auto" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="id_employee" />
           </Key>
           <Property Name="id_employee" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="id_position" Type="Int32" />
           <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="number" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="number" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="id_user" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Position" Relationship="AUDI_BaryshevModel.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
-          <NavigationProperty Name="users" Relationship="AUDI_BaryshevModel.FK_Employee_users" FromRole="Employee" ToRole="users" />
+          <NavigationProperty Name="Position" Relationship="Self.FK_Employee_Position" FromRole="Employee" ToRole="Position" />
+          <NavigationProperty Name="users" Relationship="Self.FK_Employee_users" FromRole="Employee" ToRole="users" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -246,50 +206,40 @@
           <Property Name="id_position" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Oklad" Type="Decimal" Precision="19" Scale="4" />
-          <NavigationProperty Name="Employee" Relationship="AUDI_BaryshevModel.FK_Employee_Position" FromRole="Position" ToRole="Employee" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_Position" FromRole="Position" ToRole="Employee" />
         </EntityType>
         <EntityType Name="Sale_Auto">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_user" Type="Int32" Nullable="false" />
           <Property Name="id_auto" Type="Int32" Nullable="false" />
           <Property Name="id_discounts" Type="Int32" />
           <Property Name="passport" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
-          <Property Name="tlephon_number" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
-          <NavigationProperty Name="Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Auto" FromRole="Sale_Auto" ToRole="Auto" />
-          <NavigationProperty Name="Discounts" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Discounts" FromRole="Sale_Auto" ToRole="Discounts" />
-          <NavigationProperty Name="users" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_users" FromRole="Sale_Auto" ToRole="users" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="tlephon_number" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Auto" Relationship="Self.FK_Sale_Auto_Auto" FromRole="Sale_Auto" ToRole="Auto" />
+          <NavigationProperty Name="Discounts" Relationship="Self.FK_Sale_Auto_Discounts" FromRole="Sale_Auto" ToRole="Discounts" />
+          <NavigationProperty Name="users" Relationship="Self.FK_Sale_Auto_users" FromRole="Sale_Auto" ToRole="users" />
         </EntityType>
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="id_user" />
           </Key>
           <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="balance" Type="Decimal" Precision="18" Scale="0" />
-          <NavigationProperty Name="Employee" Relationship="AUDI_BaryshevModel.FK_Employee_users" FromRole="users" ToRole="Employee" />
-          <NavigationProperty Name="Sale_Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_users" FromRole="users" ToRole="Sale_Auto" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_Employee_users" FromRole="users" ToRole="Employee" />
+          <NavigationProperty Name="Sale_Auto" Relationship="Self.FK_Sale_Auto_users" FromRole="users" ToRole="Sale_Auto" />
         </EntityType>
         <Association Name="FK_Sale_Auto_Auto">
-          <End Type="AUDI_BaryshevModel.Auto" Role="Auto" Multiplicity="1" />
-          <End Type="AUDI_BaryshevModel.Sale_Auto" Role="Sale_Auto" Multiplicity="*" />
+          <End Role="Auto" Type="Self.Auto" Multiplicity="1" />
+          <End Role="Sale_Auto" Type="Self.Sale_Auto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Auto">
               <PropertyRef Name="id_auto" />
@@ -300,8 +250,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sale_Auto_Discounts">
-          <End Type="AUDI_BaryshevModel.Discounts" Role="Discounts" Multiplicity="0..1" />
-          <End Type="AUDI_BaryshevModel.Sale_Auto" Role="Sale_Auto" Multiplicity="*" />
+          <End Role="Discounts" Type="Self.Discounts" Multiplicity="0..1" />
+          <End Role="Sale_Auto" Type="Self.Sale_Auto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Discounts">
               <PropertyRef Name="id_discount" />
@@ -312,8 +262,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_Position">
-          <End Type="AUDI_BaryshevModel.Position" Role="Position" Multiplicity="0..1" />
-          <End Type="AUDI_BaryshevModel.Employee" Role="Employee" Multiplicity="*" />
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Position">
               <PropertyRef Name="id_position" />
@@ -324,8 +274,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Employee_users">
-          <End Type="AUDI_BaryshevModel.users" Role="users" Multiplicity="1" />
-          <End Type="AUDI_BaryshevModel.Employee" Role="Employee" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id_user" />
@@ -336,8 +286,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Sale_Auto_users">
-          <End Type="AUDI_BaryshevModel.users" Role="users" Multiplicity="1" />
-          <End Type="AUDI_BaryshevModel.Sale_Auto" Role="Sale_Auto" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="Sale_Auto" Type="Self.Sale_Auto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id_user" />
@@ -347,91 +297,108 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="AudiDodelat_33__33__33__33__33__33__33Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auto" EntityType="Self.Auto" />
+          <EntitySet Name="Discounts" EntityType="Self.Discounts" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Sale_Auto" EntityType="Self.Sale_Auto" />
+          <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_Sale_Auto_Auto" Association="Self.FK_Sale_Auto_Auto">
+            <End Role="Auto" EntitySet="Auto" />
+            <End Role="Sale_Auto" EntitySet="Sale_Auto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_Auto_Discounts" Association="Self.FK_Sale_Auto_Discounts">
+            <End Role="Discounts" EntitySet="Discounts" />
+            <End Role="Sale_Auto" EntitySet="Sale_Auto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Position" Association="Self.FK_Employee_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_users" Association="Self.FK_Employee_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sale_Auto_users" Association="Self.FK_Sale_Auto_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="Sale_Auto" EntitySet="Sale_Auto" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище AUDI_BaryshevModelContainer" CdmEntityContainer="AUDI_BaryshevEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AudiDodelat_33__33__33__33__33__33__33ModelContainer" CdmEntityContainer="AudiDodelat_33__33__33__33__33__33__33Entities">
           <EntitySetMapping Name="Auto">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.Auto">
+            <EntityTypeMapping TypeName="AudiDodelat_33__33__33__33__33__33__33Model.Auto">
               <MappingFragment StoreEntitySet="Auto">
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
                 <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="engine_power" ColumnName="engine_power" />
+                <ScalarProperty Name="acceleration_from_0_to_100_sec____" ColumnName="acceleration_from_0 to_100(sec)]]]" />
                 <ScalarProperty Name="price" ColumnName="price" />
                 <ScalarProperty Name="characteristic" ColumnName="characteristic" />
-                <ScalarProperty Name="acceleration_from_0_to_100_sec____" ColumnName="acceleration_from_0 to_100(sec)]]]" />
-                <ScalarProperty Name="engine_power" ColumnName="engine_power" />
-                <ScalarProperty Name="category" ColumnName="category" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Discounts">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.Discounts">
+            <EntityTypeMapping TypeName="AudiDodelat_33__33__33__33__33__33__33Model.Discounts">
               <MappingFragment StoreEntitySet="Discounts">
-                <ScalarProperty Name="value___" ColumnName="value(%)" />
-                <ScalarProperty Name="type" ColumnName="type" />
                 <ScalarProperty Name="id_discount" ColumnName="id_discount" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="value___" ColumnName="value(%)" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employee">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.Employee">
+            <EntityTypeMapping TypeName="AudiDodelat_33__33__33__33__33__33__33Model.Employee">
               <MappingFragment StoreEntitySet="Employee">
-                <ScalarProperty Name="id_user" ColumnName="id_user" />
-                <ScalarProperty Name="number" ColumnName="number" />
-                <ScalarProperty Name="adress" ColumnName="adress" />
-                <ScalarProperty Name="id_position" ColumnName="id_position" />
-                <ScalarProperty Name="surname" ColumnName="surname" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id_employee" ColumnName="id_employee" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="id_position" ColumnName="id_position" />
+                <ScalarProperty Name="adress" ColumnName="adress" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Position">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.Position">
+            <EntityTypeMapping TypeName="AudiDodelat_33__33__33__33__33__33__33Model.Position">
               <MappingFragment StoreEntitySet="Position">
-                <ScalarProperty Name="Oklad" ColumnName="Oklad" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id_position" ColumnName="id_position" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Oklad" ColumnName="Oklad" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sale_Auto">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.Sale_Auto">
+            <EntityTypeMapping TypeName="AudiDodelat_33__33__33__33__33__33__33Model.Sale_Auto">
               <MappingFragment StoreEntitySet="Sale_Auto">
-                <ScalarProperty Name="tlephon_number" ColumnName="tlephon_number" />
-                <ScalarProperty Name="passport" ColumnName="passport" />
-                <ScalarProperty Name="id_discounts" ColumnName="id_discounts" />
-                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
-                <ScalarProperty Name="id_user" ColumnName="id_user" />
                 <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="id_auto" ColumnName="id_auto" />
+                <ScalarProperty Name="id_discounts" ColumnName="id_discounts" />
+                <ScalarProperty Name="passport" ColumnName="passport" />
+                <ScalarProperty Name="tlephon_number" ColumnName="tlephon_number" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="AUDI_BaryshevModel.users">
+            <EntityTypeMapping TypeName="AudiDodelat_33__33__33__33__33__33__33Model.users">
               <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="balance" ColumnName="balance" />
-                <ScalarProperty Name="image" ColumnName="image" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="login" ColumnName="login" />
-                <ScalarProperty Name="mail" ColumnName="mail" />
-                <ScalarProperty Name="surname" ColumnName="surname" />
-                <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

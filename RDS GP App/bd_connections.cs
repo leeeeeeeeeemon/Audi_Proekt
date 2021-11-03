@@ -8,6 +8,6 @@ namespace Audi
 {
     class bd_connections
     {
-        public static AUDI_BaryshevEntities connection = new AUDI_BaryshevEntities();
+        public static AudiDodelat_33__33__33__33__33__33__33Entities connection = new AudiDodelat_33__33__33__33__33__33__33Entities();
     }
 }

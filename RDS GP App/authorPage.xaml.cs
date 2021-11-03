@@ -61,7 +61,7 @@ namespace Audi
 
         private void btn_Registration_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new regPage());
+            NavigationService.Navigate(new regPage(ref userNameLabel, ref userBalanceLabel));
         }
     }
 

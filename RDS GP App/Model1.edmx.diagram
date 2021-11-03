@@ -4,19 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="66e445af9e3146f3b43c785a110d4d32" Name="Diagram1" ZoomLevel="55">
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.Auto" Width="1.5" PointX="3.75" PointY="8.625" />
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.Discounts" Width="1.5" PointX="3.75" PointY="1.125" />
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.Employee" Width="1.5" PointX="3" PointY="4.25" />
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.Position" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.Sale_Auto" Width="1.5" PointX="6" PointY="4.25" />
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.125" />
-        <EntityTypeShape EntityType="AUDI_BaryshevModel.users" Width="1.5" PointX="0.75" PointY="4.125" />
-        <AssociationConnector Association="AUDI_BaryshevModel.FK_Sale_Auto_Auto" />
-        <AssociationConnector Association="AUDI_BaryshevModel.FK_Sale_Auto_Discounts" />
-        <AssociationConnector Association="AUDI_BaryshevModel.FK_Employee_Position" />
-        <AssociationConnector Association="AUDI_BaryshevModel.FK_Employee_users" />
-        <AssociationConnector Association="AUDI_BaryshevModel.FK_Sale_Auto_users" />
+      <Diagram DiagramId="2d4302eabee348d2a8551cac3f03262d" Name="Diagram1">
+        <EntityTypeShape EntityType="AudiDodelat_33__33__33__33__33__33__33Model.Auto" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudiDodelat_33__33__33__33__33__33__33Model.Discounts" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudiDodelat_33__33__33__33__33__33__33Model.Employee" Width="1.5" PointX="3" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudiDodelat_33__33__33__33__33__33__33Model.Position" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudiDodelat_33__33__33__33__33__33__33Model.Sale_Auto" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudiDodelat_33__33__33__33__33__33__33Model.users" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="AudiDodelat_33__33__33__33__33__33__33Model.FK_Sale_Auto_Auto" ManuallyRouted="false" />
+        <AssociationConnector Association="AudiDodelat_33__33__33__33__33__33__33Model.FK_Sale_Auto_Discounts" ManuallyRouted="false" />
+        <AssociationConnector Association="AudiDodelat_33__33__33__33__33__33__33Model.FK_Employee_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="AudiDodelat_33__33__33__33__33__33__33Model.FK_Employee_users" ManuallyRouted="false" />
+        <AssociationConnector Association="AudiDodelat_33__33__33__33__33__33__33Model.FK_Sale_Auto_users" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
