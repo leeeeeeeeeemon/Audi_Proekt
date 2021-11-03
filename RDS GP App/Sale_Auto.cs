@@ -19,7 +19,7 @@ namespace Audi
         public int id_auto { get; set; }
         public Nullable<int> id_discounts { get; set; }
         public string passport { get; set; }
-        public Nullable<int> tlephon_number { get; set; }
+        public string tlephon_number { get; set; }
     
         public virtual Auto Auto { get; set; }
         public virtual Discounts Discounts { get; set; }

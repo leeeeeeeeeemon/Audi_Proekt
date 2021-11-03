@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="CarBuyWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock x:Name="autoInfotextBlock" HorizontalAlignment="Left" Margin="164,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="120" Width="412" FontFamily="Arial" FontSize="15"/>
+        <TextBlock x:Name="nameCarTextBlock" HorizontalAlignment="Left" Margin="72,133,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="27" Width="145" />
+
+        <TextBlock x:Name="PowerTextBlock" HorizontalAlignment="Left" Margin="75,186,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="26" Width="118" />
+        <TextBlock x:Name="from0to100TextBlock" HorizontalAlignment="Left" Margin="91,243,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="26" Width="188" />
+        <TextBlock x:Name="priceTextBlock" HorizontalAlignment="Left" Margin="47,291,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="26" Width="188" />
+        <Label Content="Мощность:" HorizontalAlignment="Left" Margin="4,181,0,0" VerticalAlignment="Top"/>
+        <Label Content="Название:" HorizontalAlignment="Left" Margin="-1,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Разгон до 100:" HorizontalAlignment="Left" Margin="0,238,0,0" VerticalAlignment="Top"/>
+        <Label Content="Цена:" HorizontalAlignment="Left" Margin="4,286,0,0" VerticalAlignment="Top" />
+        <Label Content="Введите паспортные данные" HorizontalAlignment="Left" Margin="349,128,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="passportDanniTextBox" HorizontalAlignment="Left" Height="23" Margin="360,167,0,0" TextWrapping="Wrap" Text="серия/номер" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Введите номер телефона" HorizontalAlignment="Left" Margin="349,199,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="numberTextBox" HorizontalAlignment="Left" Height="23" Margin="360,238,0,0" TextWrapping="Wrap" Text="99999999999" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="buyCarBtn" Content="Купить" HorizontalAlignment="Left" Margin="360,286,0,0" VerticalAlignment="Top" Width="120" Height="26" Click="buyCarBtn_Click"/>
     </Grid>
 </Window>

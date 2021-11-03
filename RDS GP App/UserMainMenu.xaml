@@ -21,17 +21,29 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid Name="Auto"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding}" Background="DarkSlateGray"  MouseDoubleClick="DataGridRow_MouseDoubleClick" HorizontalGridLinesBrush="DimGray" IsReadOnly="True" VerticalGridLinesBrush="DimGray">
-            
+        <DataGrid Name="Auto"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding}" Background="DarkSlateGray"  MouseDoubleClick="DataGridRow_MouseDoubleClick" HorizontalGridLinesBrush="DimGray" IsReadOnly="True" VerticalGridLinesBrush="DimGray" BorderBrush="#FF3184D6" SelectionUnit="FullRow" Visibility="Hidden">
+
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Название" Width="*" Binding="{Binding Path=name }" />
+                <DataGridTextColumn x:Name="ID" Header="id" Width="*" Binding="{Binding Path=id_auto }" />
+                <DataGridTextColumn x:Name="NameCar" Header="Название" Width="*" Binding="{Binding Path=name }" />
                 <DataGridTextColumn Header="Категория" Width="*" Binding="{Binding Path=category }" />
                 <DataGridTextColumn Header="Мощность" Width="*" Binding="{Binding Path=engine_power }" />
                 <DataGridTextColumn Header="Разгон до 100" Width="*" Binding="{Binding Path=acceleration_from_0_to_100_sec____ }" />
                 <DataGridTextColumn Header="Цена" Width="*" Binding="{Binding Path=price }" />
-                
+
             </DataGrid.Columns>
-            
+
+        </DataGrid>
+
+        <DataGrid Name="myBuy"  Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" AutoGenerateColumns="False" ItemsSource="{Binding}" Background="DarkSlateGray"  HorizontalGridLinesBrush="DimGray" IsReadOnly="True" VerticalGridLinesBrush="DimGray" BorderBrush="#FF3184D6" SelectionUnit="FullRow" Visibility="Hidden">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idAuto" Header="Серийный номер машины" Width="*" Binding="{Binding Path=id_auto }" />
+                <DataGridTextColumn x:Name="passport" Header="Паспортные данные" Width="*" Binding="{Binding Path=passport }" />
+                <DataGridTextColumn x:Name="telephoneNumber" Header="телефон" Width="*" Binding="{Binding Path=tlephon_number }" />
+
+            </DataGrid.Columns>
+
         </DataGrid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -44,10 +56,32 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <Button x:Name="ShowCars" Content="Показать машины"  FontSize="12" Foreground="White" Background="#2F4F4F" Margin="8" Click="ShowCars_Click" />
+            <Button x:Name="ShowCars" Content="Показать машины"  FontSize="12" Foreground="White" Background="#2F4F4F" Margin="8,0" Click="ShowCars_Click" />
+            <Button x:Name="ShowBuyCars" Content="Мои заказы"  FontSize="12" Foreground="White" Background="#2F4F4F" Margin="8,0,8,42"  Grid.Row="2" Grid.RowSpan="2" Click="ShowBuyCars_Click" />
         </Grid>
-        <ComboBox x:Name="modelComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="48,43,0,0" VerticalAlignment="Top" Width="45" SelectionChanged="modelComboBox_SelectionChanged" >
-            <ComboBoxItem Content="A3"/>
+        <ComboBox x:Name="modelComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="48,43,0,0" VerticalAlignment="Top" Width="52" SelectionChanged="modelComboBox_SelectionChanged" ItemsSource="{Binding}" Visibility="Hidden" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="5,0,0,0" Text="{Binding Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+
+            </ComboBox.ItemTemplate>
+
         </ComboBox>
+        <Label x:Name="ModelSeletcLabel" Content="Модель" Grid.Column="1" HorizontalAlignment="Left" Margin="48,16,0,0" VerticalAlignment="Top" Height="27" Width="59" Visibility="Hidden"/>
+        <ComboBox x:Name="kuzovComboBox" Grid.Column="1" HorizontalAlignment="Left" Margin="112,43,0,0" VerticalAlignment="Top" Width="52" SelectionChanged="kuzovComboBox_SelectionChanged" ItemsSource="{Binding}" Visibility="Hidden" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="5,0,0,0" Text="{Binding name}"/>
+                    </StackPanel>
+                </DataTemplate>
+
+            </ComboBox.ItemTemplate>
+
+        </ComboBox>
+        <Label x:Name="ModelSeletcLabel_Copy" Content="Кузов" Grid.Column="1" HorizontalAlignment="Left" Margin="112,16,0,0" VerticalAlignment="Top" Height="27" Width="59" Visibility="Hidden"/>
     </Grid>
 </Page>

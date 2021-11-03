@@ -54,8 +54,8 @@
           <Property Name="id_user" Type="int" Nullable="false" />
           <Property Name="id_auto" Type="int" Nullable="false" />
           <Property Name="id_discounts" Type="int" />
-          <Property Name="passport" Type="nchar" MaxLength="10" />
-          <Property Name="tlephon_number" Type="int" />
+          <Property Name="passport" Type="nchar" MaxLength="20" />
+          <Property Name="tlephon_number" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -256,8 +256,8 @@
           <Property Name="id_user" Type="Int32" Nullable="false" />
           <Property Name="id_auto" Type="Int32" Nullable="false" />
           <Property Name="id_discounts" Type="Int32" />
-          <Property Name="passport" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
-          <Property Name="tlephon_number" Type="Int32" />
+          <Property Name="passport" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="tlephon_number" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
           <NavigationProperty Name="Auto" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Auto" FromRole="Sale_Auto" ToRole="Auto" />
           <NavigationProperty Name="Discounts" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_Discounts" FromRole="Sale_Auto" ToRole="Discounts" />
           <NavigationProperty Name="users" Relationship="AUDI_BaryshevModel.FK_Sale_Auto_users" FromRole="Sale_Auto" ToRole="users" />
