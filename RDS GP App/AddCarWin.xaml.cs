@@ -11,7 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Audi.Core;
 namespace Audi
 {
     /// <summary>
@@ -26,16 +26,8 @@ namespace Audi
 
         private void addCarButton_Click(object sender, RoutedEventArgs e)
         {
-            var u = new Auto();
-            u.model = modelTextBox.Text;
-            u.name = nameTextBox.Text;
-            u.category = CategoryBox.Text;
-            u.engine_power = Convert.ToInt32(EngineBox.Text);
-            u.acceleration_from_0_to_100_sec____ = from0Box.Text;
-            u.price = Convert.ToDecimal(priceBox.Text);
-            u.characteristic = infoBox.Text;
-            bd_connections.connection.Auto.Add(u);
-            bd_connections.connection.SaveChanges();
+           
+            functions.addCar(modelTextBox.Text, nameTextBox.Text, CategoryBox.Text, Convert.ToInt32(EngineBox.Text), from0Box.Text, Convert.ToDecimal(priceBox.Text), infoBox.Text);
             this.DialogResult = true;
         }
     }
